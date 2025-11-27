@@ -13,6 +13,7 @@ session = boto3.Session(
 
 """ 
 ## resource mode
+## this is a higher level of abstraction exercise using resource method of boto3
 ec2 = session.resource("ec2")
 
 instances_list = ec2.instances.all()
@@ -24,8 +25,7 @@ for inst in instances_list:
 """
 
 
-
-## client mode, more detailed
+## client method, more detailed
 ec2_serv = session.client("ec2")
 
 desc_instances = ec2_serv.describe_instances() 
